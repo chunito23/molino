@@ -2,7 +2,8 @@ import Controlador.Controlador;
 import Vista.Login;
 import Vista.VistaConsola;
 import Modelo.*;
-import Vista.vistaGrafica;
+import Vista.VistaGlobal;
+import Vista.VistaGrafica;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,13 +16,6 @@ public class Main {
             controlador1.setJugador(j1);
             controlador2.setJugador(j2);
 
-            VistaConsola vistaconsola1 = new VistaConsola(controlador1);
-            VistaConsola vistaconsola2 = new VistaConsola(controlador2);
-
-
-            vistaconsola1.setVisible(true);
-            vistaconsola2.setVisible(true);
-            vistaGrafica vg = new vistaGrafica();
-            Login login1 = new Login();
+            VistaGlobal vg = new VistaGlobal(controlador1);
     }
 }

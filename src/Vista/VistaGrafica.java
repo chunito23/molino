@@ -2,7 +2,7 @@ package Vista;
 
 import javax.swing.*;
 
-public class vistaGrafica extends JFrame{
+public class VistaGrafica extends JFrame{
     private JPanel VG;
     private JButton button1;
     private JButton button2;
@@ -15,8 +15,7 @@ public class vistaGrafica extends JFrame{
     private JButton button9;
     private JButton button10;
 
-    public vistaGrafica(){
-        setVisible(true);
+    public VistaGrafica(){
         setTitle("VG");
         setLocationRelativeTo(null);
         setSize(1000,1000);
