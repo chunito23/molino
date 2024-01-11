@@ -7,6 +7,7 @@ import Vista.VistaGrafica;
 
 public class Main {
     public static void main(String[] args) {
+            //no se actualiza cuando moves
             Jugador j1 = new Jugador();
             Jugador j2 = new Jugador();
             Modelo m = new Modelo(j1,j2);
@@ -16,6 +17,6 @@ public class Main {
             controlador1.setJugador(j1);
             controlador2.setJugador(j2);
 
-            VistaGlobal vg = new VistaGlobal(controlador1);
+            VistaGlobal vg = new VistaGlobal(controlador1,controlador2);
     }
 }

@@ -1,6 +1,9 @@
 package Vista;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Login extends JFrame{
     private JButton iniciarButton;
@@ -8,14 +11,40 @@ public class Login extends JFrame{
     private JButton consolaButton;
     private JButton graficaButton;
     private JPanel login;
+    private boolean seleccionGrafica; // consola false || grafica true
 
     public Login(){
+        Color base = consolaButton.getBackground();
         setVisible(true);
         setTitle("login ");
         setLocationRelativeTo(null);
         setSize(400,200);
         setContentPane(login);
+
+        consolaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                seleccionGrafica = false;
+                consolaButton.setBackground(Color.gray);
+                graficaButton.setBackground(base);
+            }
+        });
+        graficaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                seleccionGrafica = true;
+                consolaButton.setBackground(base);
+                graficaButton.setBackground(Color.gray);
+            }
+        });
     }
+
+
+    public boolean getSeleccionGrafica() {
+        return seleccionGrafica;
+    }
+
+
 
     public JButton getIniciarButton() {
         return iniciarButton;
@@ -25,8 +54,8 @@ public class Login extends JFrame{
         this.iniciarButton = iniciarButton;
     }
 
-    public JTextField getTextField1() {
-        return textField1;
+    public String getTextField1() {
+        return textField1.getText();
     }
 
     public void setTextField1(JTextField textField1) {

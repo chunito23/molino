@@ -17,8 +17,7 @@ public class VistaConsola extends JFrame implements Ivista {
     public VistaConsola(Controlador c){
         this.c = c;
         c.setVista(this);
-        setTitle("vista ");
-        setSize(800,800);
+        setSize(600,600);
         setLocationRelativeTo(null);
         this.add(panel1);
         textField1.addActionListener(new ActionListener() {
@@ -27,7 +26,7 @@ public class VistaConsola extends JFrame implements Ivista {
                 String texto = textField1.getText();
                 if (Objects.equals(texto, "iniciar")){
                     c.iniciar();
-                } else if (texto.startsWith("poner:")) {
+                } else if (texto.startsWith("poner:")) { //arreglar error imput
                     if(casillaValida(texto.substring(6))){
                         c.ponerFicha(texto.substring(6));
                     }else{
@@ -67,6 +66,10 @@ public class VistaConsola extends JFrame implements Ivista {
             }
         }
         return esValido;
+    }
+
+    public void establecerNombre(String nombreJugador) { //nose si borre aca
+        setTitle(nombreJugador);
     }
 
     @Override
