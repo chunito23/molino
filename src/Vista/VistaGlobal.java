@@ -18,6 +18,8 @@ public class VistaGlobal {
     ArrayList<Ivista> vcs = new ArrayList<>();
     ArrayList<Ivista> vgs = new ArrayList<>();
 
+
+
      public VistaGlobal(Controlador c, Controlador c2){
          login1.getIniciarButton().addActionListener(new ActionListener(){
              @Override
